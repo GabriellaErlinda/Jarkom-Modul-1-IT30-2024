@@ -102,8 +102,13 @@ Congrats! Flag: JARKOM2024{Wh3re'5_thE_S4uce_9T8lRzAtizFe84B}
 1. Mengecek packet dengan filter `ftp` pada file `evidence.pcap`
 2. Terlihat bahwa pada filter sebelumnya terjadi pengiriman data, menggunakan filter `ftp-data` untuk melihat data apa saja yang ada
 3. Terlihat ada 2 ftp-data berupa file `m4L1c10us_W4re.c` dan `mirza.jpg`
-4. Untuk dapat melihat isi data, mengunduh kedua file dengan File -> Export Objects -> FTP-DATA -> Save file yang dipilih
-5. Dari kedua file terlihat terdapat random text dan foto berisi pesan, lalu ketika dicoba submit pada netcat, didapatkan pesan rahasia attacker adalah `MIO MIRZA`
+![image](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/assets/128443451/de605db2-14d7-4824-a79d-db4dc5b3a64b)
+
+5. Untuk dapat melihat isi data, mengunduh kedua file dengan File -> Export Objects -> FTP-DATA -> Save file yang dipilih
+![Screenshot 2024-03-31 213812](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/assets/128443451/d4ce4ce3-c027-4b29-9ff4-7eb8e4e0dfd6)
+![Screenshot 2024-03-31 213830](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/assets/128443451/5d8acc76-7a30-4908-a8c0-a2be4540ef07)
+
+6. Dari kedua file terlihat terdapat random text dan foto berisi pesan, lalu ketika dicoba submit pada netcat, didapatkan pesan rahasia attacker adalah `MIO MIRZA`
 ###### Netcat submission
 ```
 nc 10.15.40.20 10010
