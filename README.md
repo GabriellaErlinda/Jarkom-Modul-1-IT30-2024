@@ -76,7 +76,7 @@ Congrats! Flag: JARKOM2024{m4innya_h3bat_uT8lY7xyQAJt84t}
 1. Diketahui bahwa IP Attacker(yang tercatat) adalah 10.30.3.4 untuk mencari jumlah bruteforce login bisa menggunakan IP itu sebagai destinasi(ip.dst)
 2. Menghitung berapa kali sistem memperingati bahwa password keliru(bruteforce login adalah login dengan nama dan password yang salah)
 3. Gunakan Ctrl+Shift+LMB untuk memilih log?? yang memiliki info diatas dan lihat jumlah yang terpilih
-![Screenshot 2024-03-30 230438.png]
+![Screenshot 2024-03-30 230438](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/blob/patch-1/Screenshot%202024-03-30%20230438.png)
 ###### Netcat submission
 ```
 nc 10.15.40.20 10005
