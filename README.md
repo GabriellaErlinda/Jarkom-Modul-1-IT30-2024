@@ -77,6 +77,7 @@ Congrats! Flag: JARKOM2024{m4innya_h3bat_uT8lY7xyQAJt84t}
 ## >> Trace Him
 1. Karena terlihat pada packet bahwa terjadi kegiatan mencurigakan untuk login, kita mengecek conversation pada packet dengan Statistics -> Conversations
 2. Mengecek pada setiap protocol, didapati bahwa pada protocol `TCP 319` terjadi banyak request/packet yang terkirim dari IP `10.30.3.4`, yang terlihat juga pada laman packets di awal bahwa IP tersebut banyak mengirim request login
+![Screenshot 2024-03-31 224057](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/assets/128443451/2a6b77f3-1f90-414a-b46f-9cd24afb311c)
 3. Didapatkan IP attacker adalah `10.30.3.4`
 ###### Netcat submission
 ```
@@ -109,6 +110,7 @@ Congrats! Flag: JARKOM2024{Wh3re'5_thE_S4uce_9T8lRzAtizFe84B}
 ![Screenshot 2024-03-31 213830](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/assets/128443451/5d8acc76-7a30-4908-a8c0-a2be4540ef07)
 
 6. Dari kedua file terlihat terdapat random text dan foto berisi pesan, lalu ketika dicoba submit pada netcat, didapatkan pesan rahasia attacker adalah `MIO MIRZA`
+
 ![Screenshot 2024-03-31 213903](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/assets/128443451/22864c52-919a-4313-a1d9-a59d8d12fcdd)
 
 ###### Netcat submission
@@ -129,6 +131,8 @@ Congrats! Flag: JARKOM2024{l0_Blm_tW_MIO_MIRZA?_uhwCYzAyQ1dHC8B}
 ##### A. IP Address attacker 
 1. Karena terlihat pada packet bahwa terjadi kegiatan mencurigakan untuk login, terlihat ketika dibuka stream salah satu packet, terlihat banyak kegiatan percobaan login yang gagal
 2. Mengecek conversation pada packet dengan Statistics -> Conversations, didapati bahwa pada protocol `TCP 85` terjadi banyak request/packet yang terkirim dari IP `10.33.1.154`
+![Screenshot 2024-03-31 224606](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/assets/128443451/b5ae718d-68a8-4d0f-b84b-4e722f4198fc)
+
 3. Maka didapatkan IP attacker adalah `10.33.1.154`
 ##### B. Port yang digunakan web server korban
 Pada nomor sebelumnya, terlihat juga pada conversation, port dari attacker adalah `80`
@@ -139,7 +143,11 @@ Ketika follow HTTP stream dari salah satu packet, langsung terlihat tools yang d
 ##### E. Username dan password yang berhasil digunakan attacker untuk login
 1. Berdasarkan HTTP stream, kita bisa melihat bahwa terdapat informasi password is incorrect pada banyak percobaan login, respon tersebut dikirim dari IP 172.20.0.2 dan dikirimkan ke attacker, maka bisa menggunakan filter `http && ip.src == 172.20.0.2 && ip.dst == 10.33.1.154`
 2. Setelah diurutkan berdasarkan length, didapati ada 1 packet yang terlihat response nya berupa `Found` dimana response tersebut berbeda dari yang lain
+![Screenshot 2024-03-31 230537](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/assets/128443451/f237db5c-e506-4482-ad27-af1213fb143f)
+
 3. Follow HTTP stream dari packet tersebut, lalu pada kolom Find, bisa dicari kata Found, ditemukan username dan password yang digunakan, diikuti dengan teks html yang **tidak ada** kata Password is incorrect
+![Screenshot 2024-03-31 225300](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/assets/128443451/0e9f8a37-f9aa-4a04-8dce-4e70d6bd81a4)
+
 4. Didapatkan username: admin, dan password: sUp3rSecretp@ssw0rd
 ###### Netcat submission
 ```
