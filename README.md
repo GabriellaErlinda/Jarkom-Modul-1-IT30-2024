@@ -11,9 +11,32 @@
 1. Mengecek packet dengan protocol FTP pada `ftp.pcap` menggunakan filter `ftp && ip.src == 10.15.40.20`
 2. Mencari response berupa "Login successful" lalu follow stream untuk melihat password mana yang berhasil mendapatkan response tersebut
 3. Didapatkan password = `m4y_th3_Kn!fe_ch1p_&_sh4tter`
-4. Ketika di submit pada netcat, didapatkan FLAG: `JARKOM2024{Brut3f0rce_FtP_c68CR7AHQRkeRAq}`
+###### Netcat submission
+Ketika di submit pada netcat, didapatkan FLAG:
+```
+JARKOM2024{Brut3f0rce_FtP_c68CR7AHQRkeRAq}
+```
 
 ### > Evidence
+Pada file challenge.pcapng, terlihat bahwa terdapat banyak packets dengan protocol yang berbeda-beda, didapati packet dengan protocol HTTP, lalu kita bisa membuka salah satu HTTP stream. Terlihat pada stream tersebut terdapat informasi seperti server dll.
+##### A. Domain korban
+1. Menggunakan filter http untuk melihat packet dengan protocol http, setelah di filter, kita bisa melihat beberapa info response. Didapati ada response yang menyatakan Found, lalu kita buka salah satu packet tersebut.
+2. Pada packet yang dibuka, terlihat informasi seperti host, server, dll. Didapatkan domain korban = `nanomate-solutions.com`
+##### B. Web server yang digunakan korban
+- Sama seperti nomor sebelumnya, pada stream tersebut terlihat web server yang digunakan adalah Apache/2.4.56
+##### C. Endpoint yang digunakan untuk login sebagai user biasa
+1. Pada stream yang sama, didapati tulisan method POST
+2. Pada sebelah kanan method POST tersebut bisa dilihat endpoint yang digunakan user untuk login adalah `/app/includes/process_login.php`
+##### D. Email dan password yang berhasil digunakan untuk login sebagai user biasa
+1. Dikarenakan pada stream sebelumnya terdapat informasi Invalid Username or Password, maka perlu dicari stream lain
+2. Ketika dilakukan navigasi ke packet lain, didapati pada frame di kiri bawah, pada bagian Line-based text data: text/html (1 lines), ada packet yang memiliki response "Login Successful"
+3. Buka HTTP stream dari packet tersebut, lalu didapati email dan password yang benar
+4. Email: `tareq@gmail.com`, password: `tareq@nanomate`
+###### Netcat submission
+Ketika di submit pada netcat, didapatkan FLAG:
+```
+JARKOM2024{m4innya_h3bat_uT8lY7xyQAJt84t}
+```
 
 ### > How Many Packets?
 
@@ -21,7 +44,11 @@
 1. Karena terlihat pada packet bahwa terjadi kegiatan mencurigakan untuk login, kita mengecek conversation pada packet dengan Statistics -> Conversations
 2. Mengecek pada setiap protocol, didapati bahwa pada protocol `TCP 319` terjadi banyak request/packet yang terkirim dari IP `10.30.3.4`, yang terlihat juga pada laman packets di awal bahwa IP tersebut banyak mengirim request login
 3. Didapatkan IP attacker adalah `10.30.3.4`
-4. Ketika di submit pada netcat, didapatkan FLAG: `Flag: JARKOM2024{Wh3re'5_thE_S4uce_9JrRRcnfQ1koCAB}`
+###### Netcat submission
+Ketika di submit pada netcat, didapatkan FLAG:
+```
+JARKOM2024{Wh3re'5_thE_S4uce_9JrRRcnfQ1koCAB}
+```
 
 ### > Creds
 
@@ -37,7 +64,10 @@
 4. Untuk dapat melihat isi data, mengunduh kedua file dengan File -> Export Objects -> FTP-DATA -> Save file yang dipilih
 5. Dari kedua file terlihat terdapat random text dan foto berisi pesan, lalu ketika dicoba submit pada netcat, didapatkan pesan rahasia attacker adalah `MIO MIRZA`
 ###### Netcat submission
-Ketika di submit pada netcat, didapatkan FLAG: `JARKOM2024{l0_Blm_tW_MIO_MIRZA?_chw8vOnyy6FeC8Y}`
+Ketika di submit pada netcat, didapatkan FLAG:
+```
+JARKOM2024{l0_Blm_tW_MIO_MIRZA?_chw8vOnyy6FeC8Y}
+```
    
 ### > Fuzz
 ##### A. IP Address attacker 
@@ -56,7 +86,10 @@ Ketika follow HTTP stream dari salah satu packet, langsung terlihat tools yang d
 3. Follow HTTP stream dari packet tersebut, lalu pada kolom Find, bisa dicari kata Found, ditemukan username dan password yang digunakan, diikuti dengan teks html yang **tidak ada** kata Password is incorrect
 4. Didapatkan username: admin, dan password: sUp3rSecretp@ssw0rd
 ###### Netcat submission
-Ketika di submit pada netcat, didapatkan FLAG: `JARKOM2024{s3m4ng4t_ya_<3_uJf8X7nfi1Js84B}`
+Ketika di submit pada netcat, didapatkan FLAG:
+```
+JARKOM2024{s3m4ng4t_ya_<3_uJf8X7nfi1Js84B}
+```
 
 ### > Malwaew
 
