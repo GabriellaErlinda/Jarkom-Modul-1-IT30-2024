@@ -109,6 +109,8 @@ Congrats! Flag: JARKOM2024{Wh3re'5_thE_S4uce_9T8lRzAtizFe84B}
 ![Screenshot 2024-03-31 213830](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/assets/128443451/5d8acc76-7a30-4908-a8c0-a2be4540ef07)
 
 6. Dari kedua file terlihat terdapat random text dan foto berisi pesan, lalu ketika dicoba submit pada netcat, didapatkan pesan rahasia attacker adalah `MIO MIRZA`
+![Screenshot 2024-03-31 213903](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/assets/128443451/22864c52-919a-4313-a1d9-a59d8d12fcdd)
+
 ###### Netcat submission
 ```
 nc 10.15.40.20 10010
