@@ -12,9 +12,17 @@
 2. Mencari response berupa "Login successful" lalu follow stream untuk melihat password mana yang berhasil mendapatkan response tersebut
 3. Didapatkan password = `m4y_th3_Kn!fe_ch1p_&_sh4tter`
 ###### Netcat submission
-Ketika di submit pada netcat, didapatkan FLAG:
 ```
-JARKOM2024{Brut3f0rce_FtP_c68CR7AHQRkeRAq}
+nc 10.15.40.20 10004
+Jawab pertanyaan-pertanyaan yang telah disediakan:
+
+No 4:
+Pertanyaan: Apa password yang berhasil didapatkan oleh hacker setelah melakukan bruteforce login ftp?
+Format: strings
+Jawaban: m4y_th3_Kn!fe_ch1p_&_sh4tter
+Correct
+
+Congrats! Flag: JARKOM2024{Brut3f0rce_FtP_ITfCY7pygRFeC8Y}
 ```
 
 ## >> Evidence
@@ -33,9 +41,35 @@ Pada file challenge.pcapng, terlihat bahwa terdapat banyak packets dengan protoc
 3. Buka HTTP stream dari packet tersebut, lalu didapati email dan password yang benar
 4. Email: `tareq@gmail.com`, password: `tareq@nanomate`
 ###### Netcat submission
-Ketika di submit pada netcat, didapatkan FLAG:
 ```
-JARKOM2024{m4innya_h3bat_uT8lY7xyQAJt84t}
+nc 10.15.40.20 10002
+Jawab pertanyaan-pertanyaan yang telah disediakan:
+
+No 1:
+Pertanyaan: Apa domain milik korban?
+Format: xxxxxx.xxx: e.g. google.com
+Jawaban: nanomate-solutions.com
+Correct
+
+No 2:
+Pertanyaan: Apa web server yang digunakan oleh korban?
+Format: name-version: e.g. nginx-1.18.0
+Jawaban: apache-2.4.56
+Correct
+
+No 3:
+Pertanyaan: Apa endpoint yang digunakan untuk login sebagai user biasa?
+Format: /path/to/endpoint
+Jawaban: /app/includes/process_login.php
+Correct
+
+No 4:
+Pertanyaan: Apa email dan password yang berhasil digunakan untuk login sebagai user biasa?
+Format: email:password
+Jawaban: tareq@gmail.com:tareq@nanomate
+Correct
+
+Congrats! Flag: JARKOM2024{m4innya_h3bat_uT8lY7xyQAJt84t}
 ```
 
 ## >> How Many Packets?
@@ -45,9 +79,17 @@ JARKOM2024{m4innya_h3bat_uT8lY7xyQAJt84t}
 2. Mengecek pada setiap protocol, didapati bahwa pada protocol `TCP 319` terjadi banyak request/packet yang terkirim dari IP `10.30.3.4`, yang terlihat juga pada laman packets di awal bahwa IP tersebut banyak mengirim request login
 3. Didapatkan IP attacker adalah `10.30.3.4`
 ###### Netcat submission
-Ketika di submit pada netcat, didapatkan FLAG:
 ```
-JARKOM2024{Wh3re'5_thE_S4uce_9JrRRcnfQ1koCAB}
+nc 10.15.40.20 10006
+Jawab pertanyaan-pertanyaan yang telah disediakan:
+
+No 6:
+Pertanyaan: Alamat IP attacker?
+Format: xxx.xxx.xxx.xxx
+Jawaban: 10.30.3.4
+Correct
+
+Congrats! Flag: JARKOM2024{Wh3re'5_thE_S4uce_9T8lRzAtizFe84B}
 ```
 
 ## >> Creds
@@ -56,7 +98,6 @@ JARKOM2024{Wh3re'5_thE_S4uce_9JrRRcnfQ1koCAB}
 
 ## >> Whoami
 
-
 ## >> Secret
 1. Mengecek packet dengan filter `ftp` pada file `evidence.pcap`
 2. Terlihat bahwa pada filter sebelumnya terjadi pengiriman data, menggunakan filter `ftp-data` untuk melihat data apa saja yang ada
@@ -64,9 +105,17 @@ JARKOM2024{Wh3re'5_thE_S4uce_9JrRRcnfQ1koCAB}
 4. Untuk dapat melihat isi data, mengunduh kedua file dengan File -> Export Objects -> FTP-DATA -> Save file yang dipilih
 5. Dari kedua file terlihat terdapat random text dan foto berisi pesan, lalu ketika dicoba submit pada netcat, didapatkan pesan rahasia attacker adalah `MIO MIRZA`
 ###### Netcat submission
-Ketika di submit pada netcat, didapatkan FLAG:
 ```
-JARKOM2024{l0_Blm_tW_MIO_MIRZA?_chw8vOnyy6FeC8Y}
+nc 10.15.40.20 10010
+Jawab pertanyaan-pertanyaan yang telah disediakan:
+
+No 10:
+Pertanyaan: Ternyata attacker menyisipkan file lainnya selain dari file malware, temukan pesan yg dikutip oleh attacker?
+Format: strings
+Jawaban: MIO MIRZA
+Correct
+
+Congrats! Flag: JARKOM2024{l0_Blm_tW_MIO_MIRZA?_uhwCYzAyQ1dHC8B}
 ```
    
 ## >> Fuzz
@@ -86,9 +135,41 @@ Ketika follow HTTP stream dari salah satu packet, langsung terlihat tools yang d
 3. Follow HTTP stream dari packet tersebut, lalu pada kolom Find, bisa dicari kata Found, ditemukan username dan password yang digunakan, diikuti dengan teks html yang **tidak ada** kata Password is incorrect
 4. Didapatkan username: admin, dan password: sUp3rSecretp@ssw0rd
 ###### Netcat submission
-Ketika di submit pada netcat, didapatkan FLAG:
 ```
-JARKOM2024{s3m4ng4t_ya_<3_uJf8X7nfi1Js84B}
+nc 10.15.40.20 10001
+Jawab pertanyaan-pertanyaan yang telah disediakan:
+
+No 1:
+Pertanyaan: Apa IP address milik attacker?
+Format: xxx.xxx.xxx.xxx
+Jawaban: 10.33.1.154
+Correct
+
+No 2:
+Pertanyaan: Apa port yang digunakan sebagai web server korban?
+Format: xxxx: e.g. 22
+Jawaban: 80
+Correct
+
+No 3:
+Pertanyaan: Apa endpoint yang digunakan untuk login?
+Format: /path/to/endpoint
+Jawaban: /
+Correct
+
+No 4:
+Pertanyaan: Apa tool yang digunakan oleh attacker untuk bruteforce login?
+Format: toolsname-version: e.g. hydra-v9.0-dev
+Jawaban: ffuf-v2.0.0-dev
+Correct
+
+No 5:
+Pertanyaan: Apa username dan password yang berhasil digunakan oleh attacker?
+Format: username:password
+Jawaban: admin:sUp3rSecretp@ssw0rd
+Correct
+
+Congrats! Flag: JARKOM2024{s3m4ng4t_ya_<3_9hfCRbxfi6VH88Y}
 ```
 
 ## >> Malwaew
