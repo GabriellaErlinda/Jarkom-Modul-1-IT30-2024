@@ -7,7 +7,7 @@
 | Gabriella Erlinda Wijaya        | `5027221018` |
 | Aras Rizky Ananta               | `5027221053` |
 
-### > ATM or ATP or FTP?
+## >> ATM or ATP or FTP?
 1. Mengecek packet dengan protocol FTP pada `ftp.pcap` menggunakan filter `ftp && ip.src == 10.15.40.20`
 2. Mencari response berupa "Login successful" lalu follow stream untuk melihat password mana yang berhasil mendapatkan response tersebut
 3. Didapatkan password = `m4y_th3_Kn!fe_ch1p_&_sh4tter`
@@ -17,7 +17,7 @@ Ketika di submit pada netcat, didapatkan FLAG:
 JARKOM2024{Brut3f0rce_FtP_c68CR7AHQRkeRAq}
 ```
 
-### > Evidence
+## >> Evidence
 Pada file challenge.pcapng, terlihat bahwa terdapat banyak packets dengan protocol yang berbeda-beda, didapati packet dengan protocol HTTP, lalu kita bisa membuka salah satu HTTP stream. Terlihat pada stream tersebut terdapat informasi seperti server dll.
 ##### A. Domain korban
 1. Menggunakan filter http untuk melihat packet dengan protocol http, setelah di filter, kita bisa melihat beberapa info response. Didapati ada response yang menyatakan Found, lalu kita buka salah satu packet tersebut.
@@ -38,9 +38,9 @@ Ketika di submit pada netcat, didapatkan FLAG:
 JARKOM2024{m4innya_h3bat_uT8lY7xyQAJt84t}
 ```
 
-### > How Many Packets?
+## >> How Many Packets?
 
-### > Trace Him
+## >> Trace Him
 1. Karena terlihat pada packet bahwa terjadi kegiatan mencurigakan untuk login, kita mengecek conversation pada packet dengan Statistics -> Conversations
 2. Mengecek pada setiap protocol, didapati bahwa pada protocol `TCP 319` terjadi banyak request/packet yang terkirim dari IP `10.30.3.4`, yang terlihat juga pada laman packets di awal bahwa IP tersebut banyak mengirim request login
 3. Didapatkan IP attacker adalah `10.30.3.4`
@@ -50,14 +50,14 @@ Ketika di submit pada netcat, didapatkan FLAG:
 JARKOM2024{Wh3re'5_thE_S4uce_9JrRRcnfQ1koCAB}
 ```
 
-### > Creds
+## >> Creds
 
-### > Malwleowleo
+## >> Malwleowleo
 
-### > Whoami
+## >> Whoami
 
 
-### > Secret
+## >> Secret
 1. Mengecek packet dengan filter `ftp` pada file `evidence.pcap`
 2. Terlihat bahwa pada filter sebelumnya terjadi pengiriman data, menggunakan filter `ftp-data` untuk melihat data apa saja yang ada
 3. Terlihat ada 2 ftp-data berupa file `m4L1c10us_W4re.c` dan `mirza.jpg`
@@ -69,7 +69,7 @@ Ketika di submit pada netcat, didapatkan FLAG:
 JARKOM2024{l0_Blm_tW_MIO_MIRZA?_chw8vOnyy6FeC8Y}
 ```
    
-### > Fuzz
+## >> Fuzz
 ##### A. IP Address attacker 
 1. Karena terlihat pada packet bahwa terjadi kegiatan mencurigakan untuk login, terlihat ketika dibuka stream salah satu packet, terlihat banyak kegiatan percobaan login yang gagal
 2. Mengecek conversation pada packet dengan Statistics -> Conversations, didapati bahwa pada protocol `TCP 85` terjadi banyak request/packet yang terkirim dari IP `10.33.1.154`
@@ -91,5 +91,5 @@ Ketika di submit pada netcat, didapatkan FLAG:
 JARKOM2024{s3m4ng4t_ya_<3_uJf8X7nfi1Js84B}
 ```
 
-### > Malwaew
+## >> Malwaew
 
