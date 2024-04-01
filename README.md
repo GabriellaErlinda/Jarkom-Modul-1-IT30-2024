@@ -99,6 +99,7 @@ Congrats! Flag: JARKOM2024{Wh3re'5_thE_S4uce_9T8lRzAtizFe84B}
 
 ## >> Whoami
 
+
 ## >> Secret
 1. Mengecek packet dengan filter `ftp` pada file `evidence.pcap`
 2. Terlihat bahwa pada filter sebelumnya terjadi pengiriman data, menggunakan filter `ftp-data` untuk melihat data apa saja yang ada
@@ -138,8 +139,12 @@ Congrats! Flag: JARKOM2024{l0_Blm_tW_MIO_MIRZA?_uhwCYzAyQ1dHC8B}
 Pada nomor sebelumnya, terlihat juga pada conversation, port dari attacker adalah `80`
 ##### C. Endpoint yang digunakan untuk login
 Ketika pertama membuka packet, terlihat endpoint yang digunakan di sebelah kanan POST pada kolom info, atau bisa menggunakan filter `http.request.method == POST`, didapatkan endpoint yang digunakan adalah `/`
+![image](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/assets/128443451/a237472b-6aac-4f84-afc7-14cec4dcba5f)
+
 ##### D. Tool yang digunakan attacker untuk bruteforce login
 Ketika follow HTTP stream dari salah satu packet, langsung terlihat tools yang digunakan adalah Fuzz Faster U Fool v2.0.0-dev pada bagian User-Agent
+![image](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/assets/128443451/059ee281-333e-451d-a78d-73225a1bcb94)
+
 ##### E. Username dan password yang berhasil digunakan attacker untuk login
 1. Berdasarkan HTTP stream, kita bisa melihat bahwa terdapat informasi password is incorrect pada banyak percobaan login, respon tersebut dikirim dari IP 172.20.0.2 dan dikirimkan ke attacker, maka bisa menggunakan filter `http && ip.src == 172.20.0.2 && ip.dst == 10.33.1.154`
 2. Setelah diurutkan berdasarkan length, didapati ada 1 packet yang terlihat response nya berupa `Found` dimana response tersebut berbeda dari yang lain
