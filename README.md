@@ -199,4 +199,17 @@ Congrats! Flag: JARKOM2024{s3m4ng4t_ya_<3_9hfCRbxfi6VH88Y}
 ```
 
 ## >> Malwaew
+1. file keylog.txt
+2. 
+```
+nc 10.15.40.20 10003
+Jawab pertanyaan-pertanyaan yang telah disediakan:
 
+No 1:
+Pertanyaan: Apa SHA-256 hash dari malware yang dimaksud?
+Format: sha256 hash: e.g. c8cf761b68c5f693e5cf2d23acdcca1c0295c1f739805d60df46e54e37ada3da
+Jawaban: 31cf42b2a7c5c558f44cfc67684cc344c17d4946d3a1e0b2cecb8eb58173cb2f
+Correct
+
+Congrats! Flag: JARKOM2024{wow_how_u_solve_this_IhCRYbxyl6Ftk4Y}
+```
