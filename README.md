@@ -10,6 +10,9 @@
 ## >> ATM or ATP or FTP?
 1. Mengecek packet dengan protocol FTP pada `ftp.pcap` menggunakan filter `ftp && ip.src == 10.15.40.20`
 2. Mencari response berupa "Login successful" lalu follow stream untuk melihat password mana yang berhasil mendapatkan response tersebut
+![Screenshot 2024-03-31 001029](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/assets/128443451/9b12194e-b89e-4a5a-b173-7563864331ee)
+![Screenshot 2024-03-31 001132](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/assets/128443451/003c2293-de5d-429f-91d6-39c0b10295f1)
+
 3. Didapatkan password = `m4y_th3_Kn!fe_ch1p_&_sh4tter`
 ###### Netcat submission
 ```
