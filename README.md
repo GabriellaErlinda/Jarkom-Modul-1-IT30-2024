@@ -199,8 +199,17 @@ Congrats! Flag: JARKOM2024{s3m4ng4t_ya_<3_9hfCRbxfi6VH88Y}
 ```
 
 ## >> Malwaew
-1. file keylog.txt
-2. 
+1. Dikarenakan packet TLS masih terenkripsi, diperlukan decrypt TLS dengan menggunakan keylog file yang telah diberikan. Decrypt TLS dapat dilakukan dengan Edit -> Preference
+![Screenshot 2024-04-01 110907](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/assets/128443451/64666321-439b-45d5-9857-9b216adcfcc3)
+
+2. Pada Preferences, dapat dilihat pada bagian Protocol -> TLS, lalu kita dapat memasukkan `keylog.txt` yang telah diberikan pada (Pre)-Master-Secret log filename
+![Screenshot 2024-04-01 111106](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/assets/128443451/5b5f725a-c338-4b05-a8eb-aaeb4a9530d2)
+
+3. Setelah dilakukan decrypt TLS, kita dapat menggunakan filter `http` untuk melihat kegiatan pengiriman/penerimaan data dari method POST atau GET. Didapati ada 1 file dengan ekstensi .dll yang dimana merupakan executable file dan bisa ditanami malware
+![Screenshot 2024-04-01 112122](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/assets/128443451/02451c92-ef9d-4bf6-b8d8-248b44085d14)
+
+4. 
+
 ```
 nc 10.15.40.20 10003
 Jawab pertanyaan-pertanyaan yang telah disediakan:
