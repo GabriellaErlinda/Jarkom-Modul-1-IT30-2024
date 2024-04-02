@@ -82,6 +82,23 @@ Congrats! Flag: JARKOM2024{m4innya_h3bat_uT8lY7xyQAJt84t}
 ```
 
 ## >> How Many Packets?
+1.Diketahui bahwa IP Attacker(yang tercatat) adalah 10.30.3.4 untuk mencari jumlah bruteforce login bisa menggunakan IP itu sebagai destinasi(ip.dst)
+2.Menghitung berapa kali sistem memperingati bahwa password keliru(bruteforce login adalah login dengan nama dan password yang salah)
+3.Gunakan Ctrl+Shift+LMB untuk memilih log?? yang memiliki info diatas dan lihat jumlah yang terpilih
+
+###### Netcat submission
+```
+nc 10.15.40.20 10005
+Jawab pertanyaan-pertanyaan yang telah disediakan:
+
+No 5:
+Pertanyaan: Berapa total attempt login(bruteforce) yang dilakukan hacker?
+Format: number
+Jawaban: 934
+\Correct
+
+Congrats! Flag: JARKOM2024{c0unT_uR_P4cket5_Ih8kYzAf16kel4t}
+```
 
 ## >> Trace Him
 1. Karena terlihat pada packet bahwa terjadi kegiatan mencurigakan untuk login, kita mengecek conversation pada packet dengan Statistics -> Conversations
@@ -103,12 +120,59 @@ Congrats! Flag: JARKOM2024{Wh3re'5_thE_S4uce_9T8lRzAtizFe84B}
 ```
 
 ## >> Creds
+1.Ditemukan pada awal bahwa server telah merespons pada sebuah IP address yang masuk(10.30.3.1)
+2.Filter dengan ip.src untuk menemukan input login pembobol
+3.Ditemui kredensial yang sukses berada diatas Respons 230
+
+###### Netcat submission
+```
+nc 10.15.40.20 10007
+Jawab pertanyaan-pertanyaan yang telah disediakan:
+
+No 1:
+Pertanyaan:Apa username FTP yang digunakan oleh Attacker?
+Format: USER:username
+Jawaban: USER:h3ngk3rTzy
+
+No.2:
+Pertanyaan:Apa password FTP yang digunakan oleh Attacker?
+Format: PASS:password
+Jawaban: PASS:S!l3ncE
+
+
+Congrats! Flag: JARKOM2024{s3curE_uR_FtP_uhCCXOAHy1dt189}
+```
 
 ## >> Malwleowleo
+1.Untuk mengetahui malware yang dikirim bisa menggunaakan follow TCP stream pada username attacker
+2.Diketahui bahwa file yang dikirim adalah m4L1c10us_W4re.c 
+
+###### Netcat submission
+```
+nc 10.15.40.20 10008
+Jawab pertanyaan-pertanyaan yang telah disediakan:
+
+No 8:
+Pertanyaan: Apa nama malware yang dikirim oleh attacker ke korban?
+Format: strings
+Jawaban: m4L1c10us_W4re.c
+Correct
+
+Congrats! Flag: JARKOM2024{beC4reful_0f_m4lwAr3_9JCCPcxty6doC8q}
+```
 
 ## >> Whoami
+1.Untuk nama attacker bisa diketahui dengan TCP follow file m4L1c10us_W4re.c,lebih tepatnya FTP-DATA 
+2.Disitu pada kode C ketemu komen dengan bahasa Base64
+3.Jika ditranslasi akan ketemu nama Paul Atreides
 
+No 9:
+Pertanyaan: Siapa nama attacker yang sudah melakukan serangan ini?
+Format: FirstName_LastName
+Jawaban: Paul_Atreides
+Correct
 
+Congrats! Flag: JARKOM2024{Duk3_0f_4ra!s_LISAN AL GHAIB!_u688v7AHyRFHCBY}
 ## >> Secret
 1. Mengecek packet dengan filter `ftp` pada file `evidence.pcap`
 2. Terlihat bahwa pada filter sebelumnya terjadi pengiriman data, menggunakan filter `ftp-data` untuk melihat data apa saja yang ada
