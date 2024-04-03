@@ -7,7 +7,17 @@
 | Gabriella Erlinda Wijaya        | `5027221018` |
 | Aras Rizky Ananta               | `5027221053` |
 
-- [ATM or ATP or FTP?](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024?tab=readme-ov-file#-atm-or-atp-or-ftp)
+- [ATM or ATP or FTP?](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/blob/main/README.md#-atm-or-atp-or-ftp)
+- [evidence](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/blob/main/README.md#-evidence)
+- [How many packets?](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/blob/main/README.md#-how-many-packets)
+- [trace him](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/blob/main/README.md#-trace-him)
+- [creds](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/blob/main/README.md#-creds)
+- [malwleowleo](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/blob/main/README.md#-malwleowleo)
+- [whoami](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/blob/main/README.md#-whoami)
+- [secret](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/blob/main/README.md#-secret)
+- [fuzz](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/blob/main/README.md#-fuzz)
+- [malwaew](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/blob/main/README.md#-malwaew)
+
 
 ## >> ATM or ATP or FTP?
 1. Mengecek packet dengan protocol FTP pada `ftp.pcap` menggunakan filter `ftp && ip.src == 10.15.40.20`
