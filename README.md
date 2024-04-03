@@ -219,12 +219,12 @@ Ketika follow HTTP stream dari salah satu packet, langsung terlihat tools yang d
 ![image](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/assets/128443451/059ee281-333e-451d-a78d-73225a1bcb94)
 
 ##### E. Username dan password yang berhasil digunakan attacker untuk login
-1. Berdasarkan HTTP stream, kita bisa melihat bahwa terdapat informasi password is incorrect pada banyak percobaan login, respon tersebut dikirim dari IP 172.20.0.2 dan dikirimkan ke attacker, maka bisa menggunakan filter `http && ip.src == 172.20.0.2 && ip.dst == 10.33.1.154`
-2. Setelah diurutkan berdasarkan length, didapati ada 1 packet yang terlihat response nya berupa `Found` dimana response tersebut berbeda dari yang lain
-![Screenshot 2024-03-31 230537](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/assets/128443451/f237db5c-e506-4482-ad27-af1213fb143f)
+1. Berdasarkan HTTP stream, kita bisa melihat bahwa terdapat informasi password is incorrect pada banyak percobaan login, respon tersebut dikirim dari IP 172.20.0.2 dan dikirimkan ke attacker, maka bisa menggunakan filter `http && ip.src == 172.20.0.2 && ip.dst == 10.33.1.154 && http contains "Found"`
+2. Didapati ada 1 packet yang terlihat response nya berupa `Found` dimana response tersebut menandakan bahwa percobaan login berhasil
+![image](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/assets/128443451/f3e67147-5df6-48e0-b5fb-ae2c31cff375)
 
 3. Follow HTTP stream dari packet tersebut, lalu pada kolom Find, bisa dicari kata Found, ditemukan username dan password yang digunakan, diikuti dengan teks html yang **tidak ada** kata Password is incorrect
-![Screenshot 2024-03-31 225300](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/assets/128443451/0e9f8a37-f9aa-4a04-8dce-4e70d6bd81a4)
+ ![image](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/assets/128443451/ae198533-a5cd-429f-a29c-88c9d326cc8f)
 
 4. Didapatkan username: admin, dan password: sUp3rSecretp@ssw0rd
 ###### Netcat submission
