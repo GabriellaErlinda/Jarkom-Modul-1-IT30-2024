@@ -7,6 +7,8 @@
 | Gabriella Erlinda Wijaya        | `5027221018` |
 | Aras Rizky Ananta               | `5027221053` |
 
+![https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024?tab=readme-ov-file#-atm-or-atp-or-ftp]
+
 ## >> ATM or ATP or FTP?
 1. Mengecek packet dengan protocol FTP pada `ftp.pcap` menggunakan filter `ftp && ip.src == 10.15.40.20`
 2. Mencari response berupa "Login successful" lalu follow stream untuk melihat password mana yang berhasil mendapatkan response tersebut
