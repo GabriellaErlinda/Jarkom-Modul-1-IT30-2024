@@ -43,18 +43,18 @@ Congrats! Flag: JARKOM2024{Brut3f0rce_FtP_ITfCY7pygRFeC8Y}
 ## >> Evidence
 Pada file challenge.pcapng, terlihat bahwa terdapat banyak packets dengan protocol yang berbeda-beda, didapati packet dengan protocol HTTP, lalu kita bisa membuka salah satu HTTP stream. Terlihat pada stream tersebut terdapat informasi seperti server dll.
 ##### A. Domain korban
-1. Soal menanyakan domain korban, dimana hal tersebut bisa dilihat dalam packet yang menggunakan protocol http. Menggunakan filter `http` untuk melihat packet dengan protocol http, setelah di filter, kita bisa melihat beberapa info response. Setelah diurutkan berdasarkan length, didapati ada response yang menyatakan Found, lalu kita buka salah satu packet tersebut.
+1. Soal menanyakan domain korban, dimana hal tersebut bisa dilihat dalam packet yang menggunakan protocol http. Menggunakan filter `http` untuk melihat packet dengan protocol http, setelah di filter, kita bisa melihat beberapa info response. Setelah diurutkan berdasarkan `length`, didapati ada response yang menyatakan `Found`, lalu kita buka salah satu packet tersebut.
 2. Pada packet yang dibuka, terlihat informasi seperti host, server, dll. Didapatkan domain korban = `nanomate-solutions.com`
 ![image](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/assets/128443451/b0878bfd-b487-4f7c-8efe-23f187457afb)
 
 ##### B. Web server yang digunakan korban
-- Sama seperti nomor sebelumnya, pada stream tersebut terlihat web server yang digunakan adalah Apache/2.4.56
+- Sama seperti nomor sebelumnya, pada stream tersebut terlihat web server yang digunakan adalah `Apache/2.4.56`
 ##### C. Endpoint yang digunakan untuk login sebagai user biasa
 1. Endpoint biasanya dapat kita lihat dari method `GET` atau `POST` dari protocol `http`. Pada stream yang sama, didapati tulisan method POST
 2. Pada sebelah kanan method POST tersebut bisa dilihat endpoint yang digunakan user untuk login adalah `/app/includes/process_login.php`
 ##### D. Email dan password yang berhasil digunakan untuk login sebagai user biasa
 1. Dikarenakan pada stream sebelumnya terdapat informasi Invalid Username or Password, maka perlu dicari stream lain
-2. Ketika dilakukan navigasi ke packet lain, didapati pada frame di kiri bawah, pada bagian Line-based text data: text/html (1 lines), ada packet yang memiliki response "Login Successful" yang menandakan packet tersebut kemungkinan akan berisi informasi yang berhasil digunakan attacker untuk login
+2. Ketika dilakukan navigasi ke packet lain, didapati pada frame di kiri bawah, pada bagian `Line-based text data: text/html (1 lines)`, ada packet yang memiliki response `"Login Successful"` yang menandakan packet tersebut kemungkinan akan berisi informasi yang berhasil digunakan attacker untuk login
 ![image](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/assets/128443451/cb06327f-f4bf-4a9a-bc8f-da7a6773899a)
 
 4. Buka HTTP stream dari packet tersebut, lalu didapati email dan password yang benar
