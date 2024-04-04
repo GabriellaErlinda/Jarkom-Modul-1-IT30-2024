@@ -97,7 +97,7 @@ Congrats! Flag: JARKOM2024{m4innya_h3bat_uT8lY7xyQAJt84t}
 1.Diketahui bahwa IP Attacker(yang tercatat) adalah 10.30.3.4 untuk mencari jumlah bruteforce login bisa menggunakan IP itu sebagai destinasi(ip.dst)
 2.Menghitung berapa kali sistem memperingati bahwa password keliru(bruteforce login adalah login dengan nama dan password yang salah)
 3.Gunakan Ctrl+Shift+LMB untuk memilih log?? yang memiliki info diatas dan lihat jumlah yang terpilih
-![a](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/blob/main/Screenshot%202024-03-30%20230438.png)
+![a](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/blob/main/Screenshot%202024-04-03%20182608.png)
 ###### Netcat submission
 ```
 nc 10.15.40.20 10005
@@ -178,6 +178,8 @@ Congrats! Flag: JARKOM2024{beC4reful_0f_m4lwAr3_9JCCPcxty6doC8q}
 2.Disitu pada kode C ketemu komen dengan bahasa Base64
 3.Jika ditranslasi akan ketemu nama Paul Atreides
 ![d](https://github.com/GabriellaErlinda/Jarkom-Modul-1-IT30-2024/blob/main/Screenshot%202024-03-31%20000310.png)
+###### Netcat submission
+```
 No 9:
 Pertanyaan: Siapa nama attacker yang sudah melakukan serangan ini?
 Format: FirstName_LastName
@@ -185,6 +187,8 @@ Jawaban: Paul_Atreides
 Correct
 
 Congrats! Flag: JARKOM2024{Duk3_0f_4ra!s_LISAN AL GHAIB!_u688v7AHyRFHCBY}
+```
+
 ## >> Secret
 1. Mengecek packet dengan filter `ftp` pada file `evidence.pcap`
 2. Terlihat bahwa pada filter sebelumnya terjadi pengiriman data, menggunakan filter `ftp-data` untuk melihat data apa saja yang ada
